@@ -14,5 +14,6 @@ RUN npm install
 ENV PORT=3000
 EXPOSE ${PORT}
 
+ARG NODE_ENV
 # Run the app
-CMD ["npm", "run", "dev"]
+CMD if [ "$NODE_ENV"="DEV" ] ; then npm run dev; else npm run start ; fi
