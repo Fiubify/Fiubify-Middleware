@@ -17,4 +17,4 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Run Tests
-        run: docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build
+        run: docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build --exit-code-from node-app
