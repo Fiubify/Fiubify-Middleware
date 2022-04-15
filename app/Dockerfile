@@ -4,7 +4,7 @@ FROM node:alpine
 WORKDIR  /app
 
 # Copy the files
-COPY package*.json .
+COPY package*.json ./
 COPY . .
 
 # Install the packages
