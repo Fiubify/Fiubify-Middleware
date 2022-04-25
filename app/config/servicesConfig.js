@@ -1,7 +1,7 @@
 //TODO use db or ENV variables
 const servicesConfig = {
-  users: 'https://fiubify-users-staging.herokuapp.com/user',
-  auth: 'https://fiubify-users-staging.herokuapp.com/auth',
+  users: 'https://fiubify-users-staging.herokuapp.com/',
+  auth: 'https://fiubify-users-staging.herokuapp.com/',
 };
 
 module.exports = servicesConfig;
