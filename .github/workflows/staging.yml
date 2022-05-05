@@ -21,7 +21,7 @@ jobs:
       - name: Install npm dependencies
         run: npm install --only=dev
         working-directory: ./app
-      
+
       - name: Run linter
         run: npx eslint .
         working-directory: ./app
@@ -49,4 +49,7 @@ jobs:
             NODE_ENV
         env:
           NODE_ENV: STAGING
-
+      - name: codecov
+        uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
