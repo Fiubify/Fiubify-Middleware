@@ -5,4 +5,18 @@ const servicesConfig = {
   contents: 'https://fiubify-streamable-staging.herokuapp.com/'
 };
 
-module.exports = servicesConfig;
+const servicesProtectedEndpoints = {
+  contents: {
+    post: 'Artist'
+  },
+  users: {
+    get: 'Admin',
+    patch: 'Admin'
+  }
+}
+
+module.exports = {
+  servicesConfig: servicesConfig,
+  servicesProtectedEndpoints: servicesProtectedEndpoints
+};
+
