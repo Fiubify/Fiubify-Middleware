@@ -23,10 +23,11 @@ app.use(
 );
 
 app.use(
-    '/contents',
-    createProxyMiddleware('/', {
+    '/contents/',
+    createProxyMiddleware('/contents', {
         target: servicesConfig.contents,
-        changeOrigin: true
+        changeOrigin: true,
+        pathRewrite: {'^/contents': ''}
     })
 )
 
