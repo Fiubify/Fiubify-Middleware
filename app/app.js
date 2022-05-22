@@ -22,6 +22,14 @@ app.use(
   })
 );
 
+app.use(
+    '/contents',
+    createProxyMiddleware('/', {
+        target: servicesConfig.contents,
+        changeOrigin: true
+    })
+)
+
 app.get('/', (req, res) => {
   res.send('Initial Setup');
 });
