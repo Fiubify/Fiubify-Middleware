@@ -1,7 +1,5 @@
 const express = require("express");
 const cors = require("cors");
-const { createProxyMiddleware } = require("http-proxy-middleware");
-const servicesConfig = require("./config/servicesConfig");
 
 const authProxyRouter = require("./routes/authRoutes");
 const userProxyRouter = require("./routes/userRoutes");

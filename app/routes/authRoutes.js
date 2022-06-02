@@ -4,11 +4,6 @@ const servicesConfig = require("../config/servicesConfig");
 
 const router = express.Router();
 
-// POST /auth/register-email INTERN
-// POST /auth/register-provider INTERN
-// POST /validate INTERN
-// POST /validate/admin INTERN
-
 router.use(
   "/auth",
   createProxyMiddleware("/auth", {

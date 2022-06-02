@@ -4,12 +4,6 @@ const servicesConfig = require("../config/servicesConfig");
 
 const router = express.Router();
 
-// GET /user ALL
-// GET /user/:id ALL
-// PATCH /block/:id ADMIN
-// PATCH /unblock/:id ADMIN
-// PATH user/:id/change-subscription OWN USER
-
 router.use(
   "/user",
   createProxyMiddleware("/user", {
