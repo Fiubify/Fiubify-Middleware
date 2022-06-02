@@ -13,8 +13,6 @@ app.use(authProxyRouter);
 app.use(userProxyRouter);
 app.use(contentProxyRouter);
 
-app.use();
-
 app.get("/", (req, res) => {
   res.send("Initial Setup");
 });
