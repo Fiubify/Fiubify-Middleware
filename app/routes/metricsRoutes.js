@@ -9,6 +9,7 @@ router.use(
   createProxyMiddleware("/metrics", {
     target: servicesConfig.metrics,
     changeOrigin: true,
+    pathRewrite: { "^/metrics": "" },
   })
 );
 
