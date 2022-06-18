@@ -1,4 +1,3 @@
-//TODO use db or ENV variables
 const servicesConfig = {
   users:
     process.env.USERS_SERVICE_URL ||
