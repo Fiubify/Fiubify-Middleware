@@ -23,12 +23,19 @@ app.use(
 );
 
 app.use(
-    '/contents/',
-    createProxyMiddleware('/contents', {
-        target: servicesConfig.contents,
-        changeOrigin: true,
-        pathRewrite: {'^/contents': ''}
-    })
+  '/contents/',
+  createProxyMiddleware('/contents', {
+    target: servicesConfig.contents,
+    changeOrigin: true,
+    pathRewrite: {'^/contents': ''}
+  })
+)
+
+app.use(
+  createProxyMiddleware('/payments', {
+    target: servicesConfig.payments,
+    changeOrigin: true
+  })
 )
 
 app.get('/', (req, res) => {
