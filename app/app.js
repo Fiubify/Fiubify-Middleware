@@ -5,6 +5,7 @@ const authProxyRouter = require("./routes/authRoutes");
 const userProxyRouter = require("./routes/userRoutes");
 const contentProxyRouter = require("./routes/contentsRoutes");
 const metricsProxyRouter = require("./routes/metricsRoutes");
+const paymentsProxyRouter = require("./routes/paymentsRoutes");
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(authProxyRouter);
 app.use(userProxyRouter);
 app.use(contentProxyRouter);
 app.use(metricsProxyRouter);
+app.use(paymentsProxyRouter);
 
 app.get("/", (req, res) => {
   res.send("Initial Setup");

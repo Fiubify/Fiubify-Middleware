@@ -11,6 +11,9 @@ const servicesConfig = {
   metrics:
     process.env.METRICS_SERVICE_URL ||
     "https://fiubify-metrics-staging.herokuapp.com/",
+  payments:
+    process.env.PAYMENTS_SERVICE_URL ||
+    "https://fiubify-payments-staging.herokuapp.com/"
 };
 
 module.exports = servicesConfig;
