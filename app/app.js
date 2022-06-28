@@ -5,6 +5,7 @@ const authProxyRouter = require("./routes/authRoutes");
 const userProxyRouter = require("./routes/userRoutes");
 const contentProxyRouter = require("./routes/contentsRoutes");
 const metricsProxyRouter = require("./routes/metricsRoutes");
+const paymentsProxyRouter = require("./routes/paymentsRoutes");
 
 const app = express();
 
