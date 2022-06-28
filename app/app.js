@@ -1,45 +1,23 @@
-const express = require('express');
-const cors = require('cors');
-const { createProxyMiddleware } = require('http-proxy-middleware');
-const servicesConfig = require('./config/servicesConfig');
+const express = require("express");
+const cors = require("cors");
+
+const authProxyRouter = require("./routes/authRoutes");
+const userProxyRouter = require("./routes/userRoutes");
+const contentProxyRouter = require("./routes/contentsRoutes");
+const metricsProxyRouter = require("./routes/metricsRoutes");
 
 const app = express();
 
 app.use(cors());
 
-app.use(
-  '/auth',
-  createProxyMiddleware('/auth', {
-    target: servicesConfig.auth,
-    changeOrigin: true,
-  })
-);
-app.use(
-  '/user',
-  createProxyMiddleware('/user', {
-    target: servicesConfig.users,
-    changeOrigin: true,
-  })
-);
+app.use(authProxyRouter);
+app.use(userProxyRouter);
+app.use(contentProxyRouter);
+app.use(metricsProxyRouter);
+app.use(paymentsProxyRouter);
 
-app.use(
-  '/contents/',
-  createProxyMiddleware('/contents', {
-    target: servicesConfig.contents,
-    changeOrigin: true,
-    pathRewrite: {'^/contents': ''}
-  })
-)
-
-app.use(
-  createProxyMiddleware('/payments', {
-    target: servicesConfig.payments,
-    changeOrigin: true
-  })
-)
-
-app.get('/', (req, res) => {
-  res.send('Initial Setup');
+app.get("/", (req, res) => {
+  res.send("Initial Setup");
 });
 
 module.exports = app;
