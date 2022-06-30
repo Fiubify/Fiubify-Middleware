@@ -8,7 +8,8 @@ router.use(
   "/payments",
   createProxyMiddleware("/payments", {
     target: servicesConfig.payments,
-    changeOrigin: true
+    changeOrigin: true,
+    pathRewrite: { "^/payments": "" }
   })
 );
 
